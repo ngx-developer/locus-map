@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-const LMInit = window.LMInit;
+import LMInit from 'locusmaps-sdk';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
