@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+const LMInit = window.LMInit;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'locus-map';
+
+  constructor() {
+      const config = {
+        venueId: 'lax',
+        accountId: 'A11F4Y6SZRXH4X',
+        headless: false,
+        uiHide: { sidebar: true, controls: true, levelSelector: true }
+      };
+      LMInit.newMap('.myLocusMap', config)
+        .then(mapReady)
+        .catch(e => console.error('Error initializing map: ', e));
+
+      function mapReady(map) {
+        // Your map is ready to use here!
+      }
+
+    }
 }
